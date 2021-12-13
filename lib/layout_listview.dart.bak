@@ -1,0 +1,145 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
+
+class LayoutListView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text('Layout ListView')), body: MyListViewCard());
+  }
+}
+
+class MyListView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // ignore: prefer_const_literals_to_create_immutables
+    return ListView(padding: EdgeInsets.all(0), children: <Widget>[
+      ListTile(
+          title: Text('List 1'),
+          subtitle: Text('This is Homepage'),
+          leading: Icon(Icons.home, color: Colors.amber),
+          trailing: Icon(Icons.bookmark_outline)),
+      ListTile(
+          title: Text('List 2'),
+          subtitle: Text('This is your contact'),
+          leading: Icon(Icons.ballot),
+          trailing: Icon(Icons.bookmark_outline)),
+      ListTile(
+          title: Text('List 3'),
+          subtitle: Text('Manage your account here'),
+          leading: Icon(Icons.person),
+          trailing: Icon(Icons.bookmark_outline)),
+      ListTile(
+          title: Text('List 4'),
+          subtitle: Text('Access your recent file'),
+          leading: Icon(Icons.alarm),
+          trailing: Icon(Icons.bookmark_outline)),
+      ListTile(
+          title: Text('List 5'),
+          subtitle: Text('Send me an email'),
+          leading: Icon(Icons.mail),
+          trailing: Icon(Icons.bookmark_outline)),
+    ]);
+  }
+}
+
+class MyListViewCard extends StatelessWidget {
+  var trailingIcon = Icon(Icons.bookmark_outline);
+  var titles = ['Alex Suprun', 'Vicky Hladynets', 'Nicolas Horn'];
+  var subtitles = [
+    'Photos of Alex Suprun',
+    'Photos of Vicky Hladynets',
+    'Photos of Nicolas Horn'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: prefer_const_literals_to_create_immutables
+    return ListView(children: <Widget>[
+      Card(
+          child: ListTile(
+        title: Text(titles[0]),
+        subtitle: Text('Photos of Alex Suprun'),
+        leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80')),
+        trailing: trailingIcon,
+        onTap: () {
+          print('Anda mengklik Alex Suprun');
+        },
+      )),
+      Card(
+        child: ListTile(
+            title: Text('Vicky Hladynets'),
+            subtitle: Text('Photos of Vicky Hladynets'),
+            leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80')),
+            trailing: trailingIcon,
+            onTap: () {
+              print('Anda mengklik Vicky Hladynets');
+            }),
+      ),
+      Card(
+        child: ListTile(
+            title: Text('Nicolas Horn'),
+            subtitle: Text('Photos of Nicolas Horn'),
+            leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80')),
+            trailing: trailingIcon,
+            onTap: () {
+              print('Anda mengklik Nicolas Horn');
+            }),
+      )
+    ]);
+  }
+}
+
+class MyListViewCard2 extends StatelessWidget {
+  var trailingIcon = Icon(Icons.bookmark_outline);
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: prefer_const_literals_to_create_immutables
+    return ListView(children: <Widget>[
+      Card(
+          child: ListTile(
+        title: Text('Alex Suprun'),
+        subtitle: Text('@souprun'),
+        leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80')),
+        trailing: trailingIcon,
+        onTap: () {
+          print('Anda mengklik Alex Suprun');
+        },
+      )),
+      Card(
+        child: ListTile(
+            title: Text('Vicky Hladynets'),
+            subtitle: Text('@vhladynets'),
+            leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80')),
+            trailing: trailingIcon,
+            onTap: () {
+              print('Anda mengklik Vicky Hladynets');
+            }),
+      ),
+      Card(
+        child: ListTile(
+            title: Text('Nicolas Horn'),
+            subtitle: Text('@sysengineer'),
+            leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80')),
+            trailing: trailingIcon,
+            onTap: () {
+              print('Anda mengklik Nicolas Horn');
+            }),
+      )
+    ]);
+  }
+}
